@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import HamburgerButton from "../../elements/HamburgerButton";
 import PrimaryButton from "../../elements/PrimaryButton";
 import NavLinkItem from "../../elements/NavLinkItem";
-import LogoutButton from "../../elements/LogOutButton";
+import LogoutButton from "../../elements/LogoutButton";
 import LogoButton from "../../elements/LogoButton";
 import { HEADERLOGOSTR, NavMenuNames } from "../../../constants/constants";
 
