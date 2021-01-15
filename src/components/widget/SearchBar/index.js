@@ -1,6 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
+import _ from "lodash";
+import { Store } from "../../../context/context";
+import { SEARCH_INPUT } from "../../../constants/actionTypes";
 
-const SearchBar = ({ onKeywordInput }) => {
+const SearchBar = () => {
+  const { dispatch } = useContext(Store);
+
+  const handleSearch = _.debounce((text) => {
+    dispatch({
+      type: SEARCH_INPUT,
+      payload: {
+        search: text,
+      },
+    });
+  }, 1000);
+
   return (
     <div className="flex h-14 bg-white lg:m-4 px-4 lg:px-8 border-t lg:border border-gray-200">
       <div className="flex justify-center items-center">
@@ -14,7 +28,7 @@ const SearchBar = ({ onKeywordInput }) => {
         type="search"
         className="min-w-full h-full bg-white px-3 text-sm font-light focus:outline-none"
         placeholder="Search for any job, title, keywords or company"
-        onChange={(e) => onKeywordInput(e.target.value)}
+        onChange={(e) => handleSearch(e.target.value)}
       />
     </div>
   );

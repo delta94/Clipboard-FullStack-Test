@@ -2,6 +2,7 @@ import React from "react";
 import { useQuery } from "react-query";
 import FilterCard from "../../widget/FilterCard";
 import { getFilters } from "../../../services/apiServcie";
+import { FilterTypes } from "../../../constants/constants";
 
 const FilterSection = () => {
   const { isLoading, error, data } = useQuery("filters", getFilters);
@@ -17,7 +18,7 @@ const FilterSection = () => {
           {`Something went wrong ${error.message}`}
         </div>
       ) : (
-        Object.keys(data).map((item, index) => (
+        FilterTypes.map((item, index) => (
           <FilterCard
             key={index}
             filterType={item}

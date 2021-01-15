@@ -9,6 +9,15 @@ export const NavMenuNames = [
   { title: "salary", url: "/" },
 ];
 
+/** ----------------------------- Filter -------------------------*/
+
+export const FilterTypes = [
+  "job_type",
+  "department",
+  "work_schedule",
+  "experience",
+];
+
 /** ----------------------------- Sort Bar -------------------------*/
 
 export const SORTBY = "Sort by";

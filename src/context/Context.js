@@ -1,22 +1,22 @@
 import React, { createContext, useReducer } from "react";
-import reducer from "./storeReducer";
+import storeReducer from "./storeReducer";
 
 const initialState = {
-  search: "",
-  sort: {},
-  filter: {},
-  modal: false,
-  modalFilterType: "",
-  modalFilterOptions: [],
+  search: "", //search keyword
+  sort: {}, //selected sort options
+  filter: {}, //selected filter options
+  modal: false, //modal visible
+  modalFilterType: "", //filter type for modal
+  modalFilterOptions: [], //filter options for modal
 };
 
 export const Store = createContext();
 
-export const ContextProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+export const StoreProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(storeReducer, initialState);
   return (
     <Store.Provider value={{ state, dispatch }}>{children}</Store.Provider>
   );
 };
 
-export default Store;
+export default StoreProvider;
