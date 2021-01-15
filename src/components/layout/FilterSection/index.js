@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 import FilterCard from "../../widget/FilterCard";
 import { getFilters } from "../../../services/apiServcie";
 
-const FilterSection = ({ handleShowMoreClick, onSelectFilters }) => {
+const FilterSection = () => {
   const { isLoading, error, data } = useQuery("filters", getFilters);
 
   return (
@@ -20,10 +20,8 @@ const FilterSection = ({ handleShowMoreClick, onSelectFilters }) => {
         Object.keys(data).map((item, index) => (
           <FilterCard
             key={index}
-            heading={item}
+            filterType={item}
             filterOptions={data[item]}
-            onClickShowMore={(filterType) => handleShowMoreClick(filterType)}
-            onSelectFilters={onSelectFilters}
           />
         ))
       )}

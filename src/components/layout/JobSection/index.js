@@ -1,26 +1,20 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { useQuery } from "react-query";
+import { Store } from "../../../context/context";
 import HospitalListItem from "../../widget/HospitalListItem";
 import SortOptionButton from "../../elements/SortOptionButton";
 import { commafy, getTotalJobCounts } from "../../../utils/helper";
 import { SORTBY, SortOptions } from "../../../constants/constants";
 import { getJobs } from "../../../services/apiServcie";
 
-const JobSection = ({ filters, searchKeyword }) => {
-  const [selectedSortOptions, setSelectedSortOptions] = useState({});
+const JobSection = () => {
+  const { state } = useContext(Store);
+  const { filter, search, sort } = state;
 
   const { isLoading, error, data } = useQuery(
-    ["getJobs", { filters, searchKeyword, selectedSortOptions }],
-    () => getJobs({ filters, searchKeyword, selectedSortOptions })
+    ["getJobs", { filter, search, sort }],
+    () => getJobs({ filter, search, sort })
   );
-
-  const handleSortOptionClick = (title, sortOrder) => {
-    const newSelectedSortOptions = {
-      ...selectedSortOptions,
-      [title]: sortOrder,
-    };
-    setSelectedSortOptions(newSelectedSortOptions);
-  };
 
   return (
     <div className="flex flex-col flex-1 bg-white border-t border-b lg:border border-gray-200 p-4 mb-4">
@@ -39,14 +33,7 @@ const JobSection = ({ filters, searchKeyword }) => {
             <div className="hidden lg:flex justify-center items-center space-x-2">
               <span className="text-gray-400 mr-2">{SORTBY}</span>
               {SortOptions.map((item, index) => (
-                <SortOptionButton
-                  key={`${item}-${index}`}
-                  title={item}
-                  selectedSortOptions={selectedSortOptions}
-                  onOptionClick={(title, sortOrder) =>
-                    handleSortOptionClick(title, sortOrder)
-                  }
-                />
+                <SortOptionButton key={`${item}-${index}`} title={item} />
               ))}
             </div>
           </div>

@@ -2,7 +2,7 @@
 
 export const HEADERLOGOSTR = "Health Explore";
 export const NavMenuNames = [
-  { title: "profile", url: "/page" },
+  { title: "profile", url: "/" },
   { title: "jobs", url: "/" },
   { title: "professional netowrk", url: "/" },
   { title: "lounge", url: "/" },

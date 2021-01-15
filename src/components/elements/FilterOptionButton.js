@@ -1,19 +1,26 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { Store } from "../../context/context";
 import { commafy } from "../../utils/helper";
+import { SELECT_FILTER_OPTION } from "../../constants/actionTypes";
 
-const FilterOptionButton = ({ filterType, title, count, handleClick }) => {
+const FilterOptionButton = ({ forModal, filterType, title, count }) => {
+  const { dispatch } = useContext(Store);
   const [isClicked, setIsClicked] = useState(false);
 
   const handleOptionClick = () => {
     setIsClicked(!isClicked);
-    handleClick(filterType, title);
+
+    dispatch({
+      type: SELECT_FILTER_OPTION,
+      payload: { filterType, filterOption: title },
+    });
   };
 
   return (
-    <li className="my-1.5">
+    <li className={`${forModal ? "self-center" : "my-1.5"}`}>
       <button
-        className="hover:text-gray-400 focus:outline-none text-left"
-        onClick={() => handleOptionClick()}
+        className="text-left focus:outline-none"
+        onClick={handleOptionClick}
       >
         <span className={`font-light mr-3 ${isClicked && "font-bold"}`}>
           {title}
