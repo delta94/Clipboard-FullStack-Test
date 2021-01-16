@@ -4,7 +4,7 @@ import SearchBar from "../src/components/SearchBar";
 import FilterSection from "../src/components/FilterSection";
 import JobSection from "../src/components/JobSection";
 import FilterModal from "../src/components/FilterModal";
-import { Store } from "../src/context/context";
+import { Store } from "../src/context/storeContext";
 
 const Home = () => {
   const { state } = useContext(Store);

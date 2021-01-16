@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useQuery } from "react-query";
-import { Store } from "../../context/context";
+import { Store } from "../../context/storeContext";
 import HospitalListItem from "./HospitalListItem";
 import SortOptionButton from "./SortOptionButton";
 import { commafy, getTotalJobCounts } from "../../utils/helper";

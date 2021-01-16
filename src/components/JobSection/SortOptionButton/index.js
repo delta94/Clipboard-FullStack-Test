@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { SELECT_SORT_OPTION } from "../../../constants/actionTypes";
-import { Store } from "../../../context/context";
+import { Store } from "../../../context/storeContext";
 
 const SortOptionButton = ({ title }) => {
   const { state, dispatch } = useContext(Store);

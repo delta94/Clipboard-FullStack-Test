@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Store } from "../../../context/context";
+import { Store } from "../../../context/storeContext";
 import { commafy } from "../../../utils/helper";
 import { SELECT_FILTER_OPTION } from "../../../constants/actionTypes";
 

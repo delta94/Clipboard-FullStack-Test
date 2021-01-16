@@ -1,5 +1,5 @@
 import React, { createContext, useReducer } from "react";
-import reducer from "../reducer/reducer";
+import storeReducer from "../reducer/storeReducer";
 
 const initialState = {
   search: "", //search keyword
@@ -13,7 +13,7 @@ const initialState = {
 export const Store = createContext();
 
 export const StoreProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(storeReducer, initialState);
   return (
     <Store.Provider value={{ state, dispatch }}>{children}</Store.Provider>
   );

@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import _ from "lodash";
-import { Store } from "../../context/context";
+import { Store } from "../../context/storeContext";
 import { SEARCH_INPUT } from "../../constants/actionTypes";
 
 const SearchBar = () => {

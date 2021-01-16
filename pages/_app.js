@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { QueryClientProvider, QueryClient } from "react-query";
 
-import StoreProvider from "../src/context/context";
+import StoreProvider from "../src/context/storeContext";
 import Header from "../src/components/layout/Header";
 import Footer from "../src/components/layout/Footer";
 
