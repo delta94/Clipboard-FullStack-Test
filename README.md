@@ -25,10 +25,12 @@ https://clipboard-full-stack-test.vercel.app/
    - '**And**' between filer types.
    - Filter Modal works
 2. Search works
-3. Sort works - Simutaneously with other sort by options and search, filter.
+3. Sort works
+   - simutaneously with other sort by options and search, filter.
+     How to sort and display jobs by hospital
    - Sort jobs in each hospital by multiple sort options.
    - Sort hospitals with the first item of jobs in each hospital by multiple sort options.
-   - sort in 3 states per each filter: ascending, descending or default
+   - Sort works in 3 states per each filter: ascending, descending or default
 4. Unit test for API
    - npm run test
 5. Deployed to Vercel
