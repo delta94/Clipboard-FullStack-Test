@@ -37,10 +37,10 @@ export const ABOUTUSDESC =
 export const COPYRIGHT = "All copyrights reserved © 2020 - Health Explore";
 export const SITEMAP = "Sitemap";
 export const SiteMapMenus = [
-  "Nurses",
-  "Employers",
-  "Social networking",
-  "Jobs",
+  { title: "Nurses", url: "/" },
+  { title: "Employers", url: "/" },
+  { title: "Social networking", url: "/" },
+  { title: "Jobs", url: "/" },
 ];
 export const PRIVACY = "Privacy";
 export const PrivacyMenus = [

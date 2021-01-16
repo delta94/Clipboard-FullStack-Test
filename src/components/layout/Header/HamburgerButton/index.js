@@ -6,7 +6,7 @@ const styles = {
   bottomLineClass: `h-0.5 w-5 transition-all duration-200 ease-in bg-black mt-1 origin-top-left`,
 };
 
-const HamburgerButton = ({ mobileMenuVisible, handleClick }) => {
+const HamburgerButton = ({ menuOpen, handleClick }) => {
   return (
     <div
       className="flex flex-col justify-center items-center h-8 w-8 cursor-pointer lg:hidden mr-3"
@@ -14,19 +14,17 @@ const HamburgerButton = ({ mobileMenuVisible, handleClick }) => {
     >
       <div
         className={`${styles.topLineClass} ${
-          mobileMenuVisible ? "transform rotate-45" : "none"
+          menuOpen ? "transform rotate-45" : "none"
         }`}
       />
       <div
         className={`${styles.middleLineClass} ${
-          mobileMenuVisible
-            ? "transform translate-x-2 opacity-0"
-            : "opacity-100"
+          menuOpen ? "transform translate-x-2 opacity-0" : "opacity-100"
         }`}
       />
       <div
         className={`${styles.bottomLineClass} mt-1 ${
-          mobileMenuVisible
+          menuOpen
             ? "transform -rotate-45 -translate-x-0.5 translate-y-0.5"
             : "none"
         }`}

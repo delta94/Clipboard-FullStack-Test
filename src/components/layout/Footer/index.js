@@ -22,8 +22,8 @@ const Footer = () => {
         <h1 className="font-medium text-xl mb-3">{SITEMAP}</h1>
         <ul className="flex flex-col text-sm">
           {SiteMapMenus.map((item, index) => (
-            <li key={index} className="mb-2">
-              <Link href={"/"}>{item}</Link>
+            <li key={index} className="mb-2 hover:text-gray-400">
+              <Link href={item.url}>{item.title}</Link>
             </li>
           ))}
         </ul>
@@ -32,8 +32,8 @@ const Footer = () => {
         <h1 className="font-medium text-xl mb-3">{PRIVACY}</h1>
         <ul className="flex flex-col text-sm">
           {PrivacyMenus.map((item, index) => (
-            <li key={index} className="mb-2">
-              <Link href={"/"}>{item.title}</Link>
+            <li key={index} className="mb-2 hover:text-gray-400">
+              <Link href={item.url}>{item.title}</Link>
             </li>
           ))}
         </ul>

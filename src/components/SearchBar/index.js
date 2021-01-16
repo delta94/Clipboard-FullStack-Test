@@ -16,7 +16,7 @@ const SearchBar = () => {
   }, 1000);
 
   return (
-    <div className="flex h-14 bg-white lg:m-4 px-4 lg:px-8 border-t lg:border border-gray-200">
+    <div className="flex h-14 bg-white lg:m-4 px-4 lg:px-8 lg:border border-gray-200">
       <div className="flex justify-center items-center">
         <div className="w-4 h-4">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56.97 56.97">
