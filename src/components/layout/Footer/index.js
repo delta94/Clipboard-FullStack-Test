@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/Link";
+import Link from "next/link";
 import {
   ABOUTUS,
   ABOUTUSDESC,
@@ -23,7 +23,7 @@ const Footer = () => {
         <ul className="flex flex-col text-sm">
           {SiteMapMenus.map((item, index) => (
             <li key={index} className="mb-2">
-              <Link href="/">{item}</Link>
+              <Link href={"/"}>{item}</Link>
             </li>
           ))}
         </ul>
@@ -33,7 +33,7 @@ const Footer = () => {
         <ul className="flex flex-col text-sm">
           {PrivacyMenus.map((item, index) => (
             <li key={index} className="mb-2">
-              <Link href="/">{item.title}</Link>
+              <Link href={"/"}>{item.title}</Link>
             </li>
           ))}
         </ul>
