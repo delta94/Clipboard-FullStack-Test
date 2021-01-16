@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import _ from "lodash";
-import { Store } from "../../../context/context";
-import { SEARCH_INPUT } from "../../../constants/actionTypes";
+import { Store } from "../../context/context";
+import { SEARCH_INPUT } from "../../constants/actionTypes";
 
 const SearchBar = () => {
   const { dispatch } = useContext(Store);

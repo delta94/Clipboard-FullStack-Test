@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Store } from "../../../context/context";
-import FilterOptionButton from "../../elements/FilterOptionButton";
+import FilterOptionButton from "./FilterOptionButton";
 import { getFilterHeading } from "../../../utils/helper";
 import { MODAL_TOGGLE } from "../../../constants/actionTypes";
 

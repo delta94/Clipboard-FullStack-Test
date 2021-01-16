@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import { useQuery } from "react-query";
-import { Store } from "../../../context/context";
-import HospitalListItem from "../../widget/HospitalListItem";
-import SortOptionButton from "../../elements/SortOptionButton";
-import { commafy, getTotalJobCounts } from "../../../utils/helper";
-import { SORTBY, SortOptions } from "../../../constants/constants";
-import { getJobs } from "../../../services/apiServcie";
+import { Store } from "../../context/context";
+import HospitalListItem from "./HospitalListItem";
+import SortOptionButton from "./SortOptionButton";
+import { commafy, getTotalJobCounts } from "../../utils/helper";
+import { SORTBY, SortOptions } from "../../constants/constants";
+import { getJobs } from "../../services/apiServcie";
 
 const JobSection = () => {
   const { state } = useContext(Store);

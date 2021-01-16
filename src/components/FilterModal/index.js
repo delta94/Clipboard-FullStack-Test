@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import { Store } from "../../../context/context";
-import FilterOptionButton from "../../elements/FilterOptionButton";
-import { getFilterHeading } from "../../../utils/helper";
-import { MODAL_TOGGLE } from "../../../constants/actionTypes";
+import { Store } from "../../context/context";
+import FilterOptionButton from "../FilterSection/FilterCard/FilterOptionButton";
+import { getFilterHeading } from "../../utils/helper";
+import { MODAL_TOGGLE } from "../../constants/actionTypes";
 
 const FilterModal = () => {
   const { state, dispatch } = useContext(Store);

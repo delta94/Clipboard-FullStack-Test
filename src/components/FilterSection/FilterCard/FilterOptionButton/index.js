@@ -1,7 +1,7 @@
-import React, { useContext, useState } from "react";
-import { Store } from "../../context/context";
-import { commafy } from "../../utils/helper";
-import { SELECT_FILTER_OPTION } from "../../constants/actionTypes";
+import React, { useContext } from "react";
+import { Store } from "../../../../context/context";
+import { commafy } from "../../../../utils/helper";
+import { SELECT_FILTER_OPTION } from "../../../../constants/actionTypes";
 
 const FilterOptionButton = ({ forModal, filterType, title, count }) => {
   const { state, dispatch } = useContext(Store);

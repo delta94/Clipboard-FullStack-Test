@@ -1,15 +1,11 @@
 import React, { useState } from "react";
-import HamburgerButton from "../../elements/HamburgerButton";
-import PrimaryButton from "../../elements/PrimaryButton";
-import NavLinkItem from "../../elements/NavLinkItem";
-import LogoutButton from "../../elements/LogoutButton";
-import LogoButton from "../../elements/LogoButton";
+import HamburgerButton from "./HamburgerButton";
+import NavLinkItem from "./NavLinkItem";
 import { HEADERLOGOSTR, NavMenuNames } from "../../../constants/constants";
 
-const NavHeader = () => {
+const Header = () => {
   const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
 
-  const handleCreateJobBtnClick = () => {};
   const handleHamburgerBtnClick = () => {
     setMobileMenuVisible(!mobileMenuVisible);
   };
@@ -33,15 +29,29 @@ const NavHeader = () => {
         ))}
       </ul>
       <div className="flex justify-end flex-grow sm:flex-none items-center space-x-8">
-        <PrimaryButton
-          onClick={() => handleCreateJobBtnClick()}
-          title={`CREATE JOB`}
-        />
-        <LogoButton />
-        <LogoutButton />
+        <button
+          className="hidden lg:block rounded-lg border border-blue-500 text-blue-500 text-sm font-medium p-2 hover:bg-blue-500 hover:text-white focus:outline-none"
+          onClick={() => {}}
+        >
+          <span>CREATE JOB</span>
+        </button>
+        <div
+          className="relative rounded-full bg-blue-500 h-9 w-9 flex justify-center items-center cursor-pointer"
+          onClick={() => {}}
+        >
+          <p className="text-center text-white">JH</p>
+          <span className="absolute -top-1 -right-1 inline-block w-4 h-4 bg-red-600 border-white rounded-full border-2 text-xs flex justify-center items-center text-white">
+            2
+          </span>
+        </div>
+        <button className="hidden lg:block focus:outline-none">
+          <span className="hover:text-gray-400 text-sm font-medium">
+            {`LOGOUT`}
+          </span>
+        </button>
       </div>
     </nav>
   );
 };
 
-export default NavHeader;
+export default Header;
