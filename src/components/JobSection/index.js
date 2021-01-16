@@ -18,6 +18,17 @@ const JobSection = () => {
 
   return (
     <div className="flex flex-col flex-1 bg-white border-t border-b lg:border border-gray-200 p-4 mb-4">
+      <div className="flex justify-between items-center mb-6 mt-4 text-sm">
+        <span>{`${
+          data ? `${commafy(getTotalJobCounts(data))} job postings` : ""
+        }`}</span>
+        <div className="hidden lg:flex justify-center items-center space-x-2">
+          <span className="text-gray-400 mr-2">{SORTBY}</span>
+          {SortOptions.map((item, index) => (
+            <SortOptionButton key={`${item}-${index}`} title={item} />
+          ))}
+        </div>
+      </div>
       {isLoading ? (
         <div className="flex flex-col h-full w-full justify-center items-center">
           Loading...
@@ -28,15 +39,6 @@ const JobSection = () => {
         </div>
       ) : (
         <>
-          <div className="flex justify-between items-center mb-6 mt-4 text-sm">
-            <span>{`${commafy(getTotalJobCounts(data))} job postings`}</span>
-            <div className="hidden lg:flex justify-center items-center space-x-2">
-              <span className="text-gray-400 mr-2">{SORTBY}</span>
-              {SortOptions.map((item, index) => (
-                <SortOptionButton key={`${item}-${index}`} title={item} />
-              ))}
-            </div>
-          </div>
           {data.map((item, index) => (
             <HospitalListItem key={index} data={item} />
           ))}
