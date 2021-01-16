@@ -13,7 +13,7 @@ https://clipboard-full-stack-test.vercel.app/
 ## Stack used in test project
 
 1. Next.js (Functional Component Only)
-2. useContext + useReducer hooks for global state management. (Filter Options, Sort Options, Search Keyword)
+2. useContext + useReducer hooks for global state management.
 3. React Query for fetching remote data. It helps unstable connection.
 4. Tailwind CSS for styling
 5. Jest for Api test
